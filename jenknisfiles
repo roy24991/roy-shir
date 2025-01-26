@@ -16,7 +16,7 @@ pipeline {
         stage('Run Python Script') {
             steps {
                 // Run the Python script
-                sh 'python3 scripts/PythonScript.py || python scripts/PythonScript.py'
+                bat 'python PythonScript.py'
             }
         }
     }
