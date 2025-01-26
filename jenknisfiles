@@ -1,8 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Clone Repository') {
             steps {
+                // Clone the repository
+                git branch: 'main', url: 'https://github.com/roy24991/roy-shir'
+            }
+        }
+        stage('Hello World') {
+            steps {
+                // Print Hello World
                 echo 'Hello World'
             }
         }
