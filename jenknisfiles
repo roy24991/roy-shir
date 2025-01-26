@@ -13,5 +13,11 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('Run Python Script') {
+            steps {
+                // Run the Python script
+                sh 'python3 path/to/your_script.py || python path/to/your_script.py'
+            }
+        }
     }
 }
