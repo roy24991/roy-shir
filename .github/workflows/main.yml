@@ -14,4 +14,10 @@ jobs:
       - name: Ping Google
         run: ping -c 4 google.com
 
- 
+ - name: List Files in Current Directory
+  run: |
+    echo "Current directory:"
+    pwd
+    echo "Listing files:"
+    ls -la
+
