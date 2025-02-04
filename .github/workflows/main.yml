@@ -1,12 +1,18 @@
-name: My First Action
 
-on: push  # Runs when code is pushed
+name: My Pipeline
+
+on: [push]  # הפעלת הפייפליין בכל פוש
 
 jobs:
-  my-job: #Here you put the name of the job
-    runs-on: ubuntu-latest # The CI-CD pipeline will run on Ubuntu
+  build:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        run: git clone https://github.com/roy24991/roy-shir # Gets the latest code, in other words it does 'git clone' 
-      - name: Print Hello World
-        run: echo "Hello, GitHub Actions!" # This is just the command
+        uses: actions/checkout@v3
+
+      - name: Ping Google
+        run: ping -c 4 google.com
+
+      - name: List Files
+        run: ls -la
